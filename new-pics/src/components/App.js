@@ -1,11 +1,21 @@
 import React from "react";
 import "./App.css";
 import Header from "./header/Header";
+import unsplash from "../api/unsplash";
 
 class App extends React.Component {
-  handleOnSearch(searchTerm) {
-    console.log(searchTerm);
-  }
+  state = { images: [] };
+
+  handleOnSearch = async (searchTerm) => {
+
+    const response = await unsplash.get("/search/photos", {
+      params: { query: searchTerm }
+    });
+
+    this.setState({ images: response.data.results });
+
+    console.log(this.state.images);
+  };
 
   render() {
     return (
