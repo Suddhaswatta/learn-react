@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Header from "./header/Header";
 import unsplash from "../api/unsplash";
+import ImageList from "./image/ImageList";
 
 class App extends React.Component {
   state = { images: [] };
@@ -21,6 +22,7 @@ class App extends React.Component {
     return (
       <div>
         <Header onSearch={this.handleOnSearch} />
+        <ImageList images = {this.state.images}/>
       </div>
     );
   }
