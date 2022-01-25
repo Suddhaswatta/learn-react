@@ -12,9 +12,9 @@ class Header extends React.Component {
         return (
             <div>
               <header>
-                <nav className="navbar navbar-light bg-light">
+                <nav className="navbar navbar-light bg-light fixed-top">
                   <div className="container-fluid">
-                    <div className="navbar-brand">Search App</div>
+                    <div className="navbar-brand">Search Pics</div>
                    <Search onSearchSubmit={this.handleOnSearchSubmit}/>
                   </div>
                 </nav>
