@@ -8,9 +8,8 @@ class App extends React.Component {
   state = { images: [] };
 
   handleOnSearch = async (searchTerm) => {
-
     const response = await unsplash.get("/search/photos", {
-      params: { query: searchTerm }
+      params: { query: searchTerm },
     });
 
     this.setState({ images: response.data.results });
@@ -22,7 +21,7 @@ class App extends React.Component {
     return (
       <div>
         <Header onSearch={this.handleOnSearch} />
-        <ImageList images = {this.state.images}/>
+        <ImageList images={this.state.images} />
       </div>
     );
   }
