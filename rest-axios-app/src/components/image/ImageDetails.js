@@ -1,11 +1,19 @@
-const ImageDetails = (props) => {
+import { Component } from "react";
 
-    console.log(props.image);
-  return (
-  <div>
-      <img src={props.image.urls.small} ></img>
+class ImageDetails extends Component{
 
-  </div>
-  )};
+    
 
-export default ImageDetails;
+    render(){
+        const {urls,id,alt_description} = this.props.image;
+        return (
+            <img
+              src={urls.regular}
+              key={id}
+              alt={alt_description}
+            ></img>
+          );
+    }
+}
+
+export default ImageDetails
